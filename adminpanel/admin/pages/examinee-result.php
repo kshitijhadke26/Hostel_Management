@@ -20,8 +20,8 @@
                                 <th>Fullname</th>
                                 <th>Exam Name</th>
                                 <th>Scores</th>
-                                <th>Ratings</th>
-                                <!-- <th width="10%"></th> -->
+                                <th>Percentage</th>
+                               
                             </tr>
                             </thead>
                             <tbody>

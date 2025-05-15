@@ -47,7 +47,21 @@ if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("lo
 
 
  ?> 
-
+<html>
+  <body>
+  <div style="background: rgb(191,189,231);
+background: linear-gradient(90deg, rgba(191,189,231,1) 0%, rgba(192,192,244,1) 37%, rgba(151,213,226,1) 100%);">
+  <pre>
+    
+  <h1><b>  Dashboard<b></h1>
+    <center>
+    <h3 class="page-title-subheading">Welcome to Online Exam Management System.</h3>
+    <br>
+    <img src="img.jpeg" alt="exam img" style="width:500px;height:200px;">
+  </pre>
+  </div>
+  </body>
+</html>
 
 <!-- MAO NI IYA FOOTER -->
 <?php include("includes/footer.php"); ?>

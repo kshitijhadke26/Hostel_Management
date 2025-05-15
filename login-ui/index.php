@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="login-ui/css/util.css">
 	<link rel="stylesheet" type="text/css" href="login-ui/css/main.css">
 	<link href="logo-inverse.png" rel="icon">
-    <!-- <link href="Images/hospital_logo.jpg" rel="icon"> -->
+    
 </head>
 <body>
 	
@@ -25,7 +25,7 @@
 				<div class="login100-form-title" style="font-size:30px; font-weight: bold; color:white; background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6508620689655172) 35%, rgba(0,212,255,1) 100%);">WELCOME TO THE SOFTWARE
 					<span class="login100-form-title-1">
-					 Sign In
+					 
 					</span>
 				</div>
 
@@ -45,10 +45,17 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.65086206896
 
 					<div class="container-login100-form-btn" align="right">
 						<button type="submit" class="login100-form-btn">
-							Login
+							LOGIN
 						</button>
+					
+						<button type="submit" class="login100-form-btn">
+						   <a href="adminpanel/admin/index.php" style="color:white; font-size:20px;">Admin Login</a>
+						</button>
+	
 					</div>
+
 				</form>
+				
 			</div>
 		</div>
 	</div>

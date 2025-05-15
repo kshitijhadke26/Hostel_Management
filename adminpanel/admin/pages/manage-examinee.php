@@ -24,13 +24,13 @@
                                 <th>Year level</th>
                                 <th>Email</th>
                                 <th>Password</th>
-                                <th>status</th>
+                                <th>Status</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                               <?php 
-                                $selExmne = $conn->query("SELECT * FROM examinee_tbl ORDER BY exmne_id DESC ");
+                                $selExmne = $conn->query("SELECT * FROM examinee_tbl ORDER BY exmne_id ASC ");
                                 if($selExmne->rowCount() > 0)
                                 {
                                     while ($selExmneRow = $selExmne->fetch(PDO::FETCH_ASSOC)) { ?>

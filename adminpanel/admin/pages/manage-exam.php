@@ -10,7 +10,7 @@
             
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-header">ExAM List
+                    <div class="card-header">EXAM List
                     </div>
                     <div class="table-responsive">
                         <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">

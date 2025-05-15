@@ -155,8 +155,8 @@
             <label>Gender</label>
             <select class="form-control" name="gender" id="gender">
               <option value="0">Select gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
           </div>
           <div class="form-group">
@@ -172,13 +172,13 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Year Level</label>
+            <label>Select Year</label>
             <select class="form-control" name="year_level" id="year_level">
-              <option value="0">Select year level</option>
-              <option value="first year">First Year</option>
-              <option value="second year">Second Year</option>
-              <option value="third year">Third Year</option>
-              <option value="fourth year">Fourth Year</option>
+              <option value="0">Select year</option>
+              <option value="First Year">First Year</option>
+              <option value="Second Year">Second Year</option>
+              <option value="Third Year">Third Year</option>
+              <option value="Fourth Year">Fourth Year</option>
             </select>
           </div>
           <div class="form-group">
@@ -219,7 +219,7 @@
           <div class="form-group">
             <label>Question</label>
             <input type="hidden" name="examId" value="<?php echo $exId; ?>">
-            <input type="" name="question" id="course_name" class="form-control" placeholder="Input question" autocomplete="off">
+            <input type="textarea" name="question" id="course_name" class="form-control" placeholder="Input question" autocomplete="off">
           </div>
 
           <fieldset>
