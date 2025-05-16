@@ -140,7 +140,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                                while ($selQuestionRow = $selQuest->fetch(PDO::FETCH_ASSOC)) { ?>
                                                 <tr>
                                                         <td >
-                                                            <b><?php echo $i++ ; ?> .) <?php echo $selQuestionRow['exam_question']; ?></b><br>
+                                                            <b><?php echo $i++ ; ?>. <?php echo $selQuestionRow['exam_question']; ?></b><br>
                                                             <?php 
                                                               // Choice A
                                                               if($selQuestionRow['exam_ch1'] == $selQuestionRow['exam_answer'])
