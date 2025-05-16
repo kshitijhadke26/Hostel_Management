@@ -11,7 +11,7 @@
                             </i>
                         </div>
                         <div> <h1> Dashboard </h1>
-                            <div class="page-title-subheading">Welcome to Online Exam Management System.  
+                            <div class="page-title-subheading" style="color: red">Welcome to Online Exam Management System.  
                             </div>
                         </div>
                     </div>
