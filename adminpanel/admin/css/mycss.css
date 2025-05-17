@@ -10,3 +10,6 @@
 .content-count{
     font-size: 2.5rem; font-weight: bold;
 }
+.crop-img{
+    width: 5px; height: 5px;
+}

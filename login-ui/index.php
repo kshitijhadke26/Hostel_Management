@@ -15,15 +15,31 @@
 	<link rel="stylesheet" type="text/css" href="login-ui/css/util.css">
 	<link rel="stylesheet" type="text/css" href="login-ui/css/main.css">
 	<link href="logo-inverse.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     
 </head>
-<body>
+<body style="font-family: 'Poppins', sans-serif;">
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="font-size:30px; font-weight: bold; color:white; background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6508620689655172) 35%, rgba(0,212,255,1) 100%);">WELCOME TO THE SOFTWARE
+				<div class="login100-form-title" style="
+    font-size:30px;
+    font-weight: bold;
+    color:white;
+    background: url('/Hostel_Management/adminpanel/admin/assets/images/bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+"> <div style=" 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.1;
+        z-index: 1;
+    "></div><div style="color: White;">Welcome to E-Pariksha</div>
 					<span class="login100-form-title-1">
 					 
 					</span>
@@ -44,12 +60,12 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.65086206896
 
 
 					<div class="container-login100-form-btn" align="right">
-						<button type="submit" class="login100-form-btn">
-							LOGIN
+						<button type="submit" class="login100-form-btn" >
+							<div style="font-size:20px; font-weight: 400;">Login</div>
 						</button>
 					
 						<button type="submit" class="login100-form-btn">
-						   <a href="adminpanel/admin/index.php" style="color:white; font-size:20px;">Admin Login</a>
+						   <a href="adminpanel/admin/index.php" style="color:white; font-size:20px;  padding: 5px; font-weight: 400;">Admin Login</a>
 						</button>
 	
 					</div>

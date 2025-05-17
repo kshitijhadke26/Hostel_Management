@@ -14,16 +14,32 @@
 	<link rel="stylesheet" type="text/css" href="login-ui/vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="login-ui/css/util.css">
 	<link rel="stylesheet" type="text/css" href="login-ui/css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="font-family: 'Poppins', sans-serif;">
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6508620689655172) 35%, rgba(0,212,255,1) 100%);">
-					<span class="login100-form-title-1">
-						ADMIN Sign In
+				<div class="login100-form-title" style="position: relative; overflow: hidden;">
+					<div style="
+        background: url('/Hostel_Management/adminpanel/admin/assets/images/admin-bg-2.jpg') no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        opacity: 0.1;
+        z-index: 1;
+   	 "></div><div style="
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(40, 40, 90, 0.33); /* dark overlay */
+        z-index: 2;
+    "></div>
+	
+					<span  style="color: white; z-index: 3; font-size: 34px; font-weight: bold; padding: 0px;">
+						Admin Sign In
 					</span>
 				</div>
 
@@ -42,7 +58,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.65086206896
 
 
 					<div class="container-login100-form-btn" align="right">
-						<button type="submit" class="login100-form-btn">
+						<button type="submit" class="login100-form-btn" style="color:white; font-size:24px;  padding: 5px; font-weight: 500;">
 							LOGIN
 						</button>
 					</div>
