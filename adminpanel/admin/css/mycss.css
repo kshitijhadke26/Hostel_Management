@@ -1,0 +1,12 @@
+.base-card{
+    height: 160px; display: flex; align-items: center; justify-content: center; border-radius: 12px;
+}
+.center-content1{
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.content-info{
+    font-size: 1.5rem; font-weight: 500; margin-bottom: 10px;
+}
+.content-count{
+    font-size: 2.5rem; font-weight: bold;
+}

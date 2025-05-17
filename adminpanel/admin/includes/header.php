@@ -15,9 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
      
     <!-- MAIN CSS NIYA -->
+    <link href="css/mycss.css" rel="stylesheet">
     <link href="./main.css" rel="stylesheet">
     <link href="css/sweetalert.css" rel="stylesheet">
     <link href="css/facebox.css" rel="stylesheet">
+
 </head>
 <body id="body">
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
