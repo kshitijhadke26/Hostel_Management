@@ -1,19 +1,59 @@
 <?php
- include("../../../conn.php");
- extract($_POST);
+include("../../../conn.php");
+extract($_POST);
 
+// Start building the update query based on whether a new password was provided
+if (!empty($exPass)) {
+    // Hash the new password
+    $hashedPass = password_hash($exPass, PASSWORD_DEFAULT);
 
-$updCourse = $conn->query("UPDATE examinee_tbl SET exmne_fullname='$exFullname', exmne_course='$exCourse', exmne_gender='$exGender', exmne_birthdate='$exBdate', exmne_year_level='$exYrlvl', exmne_email='$exEmail', exmne_password='$exPass' WHERE exmne_id='$exmne_id' ");
-if($updCourse)
-{
-	   $res = array("res" => "success", "exFullname" => $exFullname);
+    $update = $conn->prepare("UPDATE examinee_tbl 
+        SET exmne_fullname = ?, 
+            exmne_course = ?, 
+            exmne_gender = ?, 
+            exmne_birthdate = ?, 
+            exmne_year_level = ?, 
+            exmne_email = ?, 
+            exmne_password = ?
+        WHERE exmne_id = ?");
+    
+    $updated = $update->execute([
+        $exFullname, 
+        $exCourse, 
+        $exGender, 
+        $exBdate, 
+        $exYrlvl, 
+        $exEmail, 
+        $hashedPass, 
+        $exmne_id
+    ]);
+} else {
+    // No password change
+    $update = $conn->prepare("UPDATE examinee_tbl 
+        SET exmne_fullname = ?, 
+            exmne_course = ?, 
+            exmne_gender = ?, 
+            exmne_birthdate = ?, 
+            exmne_year_level = ?, 
+            exmne_email = ?
+        WHERE exmne_id = ?");
+    
+    $updated = $update->execute([
+        $exFullname, 
+        $exCourse, 
+        $exGender, 
+        $exBdate, 
+        $exYrlvl, 
+        $exEmail, 
+        $exmne_id
+    ]);
 }
-else
-{
-	   $res = array("res" => "failed");
+
+if ($updated) {
+    $res = array("res" => "success", "exFullname" => $exFullname);
+} else {
+    $res = array("res" => "failed");
 }
 
-
-
- echo json_encode($res);	
+echo json_encode($res);
 ?>

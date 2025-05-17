@@ -1,4 +1,3 @@
-
 <?php 
   include("../../../conn.php");
   $id = $_GET['id'];
@@ -58,10 +57,10 @@
         <input type="" name="exEmail" class="form-control" required="" value="<?php echo $selExmne['exmne_email']; ?>" >
      </div>
 
-     <div class="form-group">
-        <legend>Password</legend>
-        <input type="" name="exPass" class="form-control" required="" value="<?php echo $selExmne['exmne_password']; ?>" >
-     </div>
+      <div class="form-group">
+         <legend>Password (leave blank to keep current)</legend>
+         <input type="password" name="exPass" class="form-control" placeholder="Enter new password if changing">
+      </div>
 
      <div class="form-group">
         <legend>Status</legend>
@@ -74,10 +73,3 @@
 </form>
   </div>
 </fieldset>
-
-
-
-
-
-
-

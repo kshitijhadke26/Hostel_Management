@@ -23,7 +23,7 @@
                                 <th>Course</th>
                                 <th>Year level</th>
                                 <th>Email</th>
-                                <th>Password</th>
+                                <!-- <th>Password</th> -->
                                 <th>Status</th>
                                 <th></th>
                             </tr>
@@ -47,7 +47,7 @@
                                             </td>
                                            <td><?php echo $selExmneRow['exmne_year_level']; ?></td>
                                            <td><?php echo $selExmneRow['exmne_email']; ?></td>
-                                           <td><?php echo $selExmneRow['exmne_password']; ?></td>
+                                           <!-- <td><?php echo $selExmneRow['exmne_password']; ?></td> -->
                                            <td><?php echo $selExmneRow['exmne_status']; ?></td>
                                            <td>
                                                <a rel="facebox" href="facebox_modal/updateExaminee.php?id=<?php echo $selExmneRow['exmne_id']; ?>" class="btn btn-sm btn-primary">Update</a>

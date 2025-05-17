@@ -9067,6 +9067,7 @@ button,
   height: 60px;
   width: 97px;
   background: url(assets/images/logo-inverse.png);
+  background-repeat: no-repeat;
 }
 .app-header__menu,
 .app-header__mobile-menu {
