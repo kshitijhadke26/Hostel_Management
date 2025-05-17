@@ -39,27 +39,29 @@
     "></div>
 	
 					<span  style="color: white; z-index: 3; font-size: 34px; font-weight: bold; padding: 0px;">
-						Admin Sign In
+						Admin Log In
 					</span>
 				</div>
 
 				<form method="post" id="adminLoginFrm" class="login100-form validate-form">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
+						<span class="label-input100" >Username:</span>
 						<input class="input100" type="text" name="username" placeholder="Enter username">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Password is required">
+						<span class="label-input100" >Password:</span>
+						<input class="input100" type="password" name="pass" placeholder="Enter your password">
 						<span class="focus-input100"></span>
 					</div>
 
-
-					<div class="container-login100-form-btn" align="right">
+					<div class="container-login100-form-btn" align="center">
 						<button type="submit" class="login100-form-btn" style="color:white; font-size:24px;  padding: 5px; font-weight: 500;">
 							LOGIN
+						</button>
+						<button type="submit" class="login100-form-btn">
+						   <a href="../../index.php" style="color:white; font-size:20px;  padding: 5px; font-weight: 400;">Examinee Login</a>
 						</button>
 					</div>
 				</form>
