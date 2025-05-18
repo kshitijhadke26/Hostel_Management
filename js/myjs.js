@@ -22,7 +22,7 @@ $(document).on("click","#startQuiz", function(){
             {
               Swal.fire(
                 'Already Taken ',
-                'you already take this exam',
+                'You have already taken this exam.',
                 'error'
               )
             }
@@ -32,31 +32,21 @@ $(document).on("click","#startQuiz", function(){
               return false;
             }
           },
-          error : function(xhr, ErrorStatus, error){
-            console.log(status.error);
+          error : function(xhr, status, error){
+              console.log(error);
           }
 
         });
-
-
-
-
   }
  });
 	return false;
 })
-
-
 
 // Reset Exam Form
 $(document).on("click","#resetExamFrm", function(){
       $('#submitAnswerFrm')[0].reset();
       return false;
 });
-
-
-
-
 
 // Select Time Limit
 var mins

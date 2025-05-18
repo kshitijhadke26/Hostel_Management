@@ -19,9 +19,6 @@ $(document).on("submit","#examineeLoginFrm", function(){
    return false;
 });
 
-
-
-
 // Submit Answer
 $(document).on('submit', '#submitAnswerFrm', function(){
   var examAction = $('#examAction').val();
@@ -30,7 +27,7 @@ $(document).on('submit', '#submitAnswerFrm', function(){
   {
     Swal.fire({
     title: 'Time Out',
-    text: "your time is over, please click ok",
+    text: "Your time is over, please click ok",
     icon: 'warning',
     showCancelButton: false,
     allowOutsideClick: false,
@@ -46,7 +43,7 @@ if (result.value) {
     {
        Swal.fire(
          'Already Taken',
-         "you already take this exam",
+         "You have already taken this exam",
          'error'
        ) 
     }
@@ -54,7 +51,7 @@ if (result.value) {
     {
         Swal.fire({
             title: 'Success',
-            text: "your answer successfully submitted!",
+            text: "Your exam successfully submitted!",
             icon: 'success',
             allowOutsideClick: false,
             confirmButtonColor: '#3085d6',
@@ -88,10 +85,10 @@ if (result.value) {
   {
       Swal.fire({
     title: 'Are you sure?',
-    text: "you want to submit your answer now?",
+    text: "You want to submit your answer now?",
     icon: 'warning',
     showCancelButton: true,
-    allowOutsideClick: false,
+    allowOutsideClick: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Yes, submit now!'
@@ -104,7 +101,7 @@ if (result.value) {
     {
        Swal.fire(
          'Already Taken',
-         "you already take this exam",
+         "You have already taken this exam",
          'error'
        ) 
     }
@@ -112,7 +109,7 @@ if (result.value) {
     {
         Swal.fire({
             title: 'Success',
-            text: "your answer successfully submitted!",
+            text: "Your exam successfully submitted!",
             icon: 'success',
             allowOutsideClick: false,
             confirmButtonColor: '#3085d6',
@@ -144,12 +141,6 @@ if (result.value) {
   }
 
 
-
-
-
-
-
-
 return false;
 });
 
@@ -169,7 +160,7 @@ $(document).on("submit","#addFeebacks", function(){
       {
         Swal.fire(
           'Success',
-          'your feedbacks has been submitted successfully',
+          'Your feedbacks has been submitted successfully',
           'success'
         )
           $('#addFeebacks')[0].reset();

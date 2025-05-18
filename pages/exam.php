@@ -17,18 +17,18 @@
          <div class="app-page-title">
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
-                        <div>
+                        <div style="font-size: 35px;">
                             <?php echo $selExam['ex_title']; ?>
                             <div class="page-title-subheading">
                               <?php echo $selExam['ex_description']; ?>
                             </div>
                         </div>
                     </div>
-                    <div class="page-title-actions mr-5" style="font-size: 20px;">
+                    <div class="page-title-actions mr-5">
                         <form name="cd">
                           <input type="hidden" name="" id="timeExamLimit" value="<?php echo $selExamTimeLimit; ?>">
-                          <label>Remaining Time : </label>
-                          <input style="border:none;background-color: transparent;color:inpu;font-size: 25px;" name="disp" type="text" class="clock" id="txt" value="00:00" size="5" readonly="true" />
+                          <label style="font-size: 25px; margin-left: 50px;;">Remaining Time : </label>
+                          <input style="border:none;background-color: transparent;color:red;font-size: 40px; margin-left:20px;" type="text" class="clock" id="countdown" value="00:00" size="5" readonly="true" disabled/>
                       </form> 
                     </div>   
                  </div>
@@ -52,7 +52,7 @@
                             <p style="margin: 10px 20px;"><b><?php echo $i++ ; ?>. <?php echo $selQuestRow['exam_question']; ?></b></p>
                             <div class="col-md-4 float-left">
                               <div class="form-group pl-4 ">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch1']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch1']; ?> required >
+                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch1']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch1']; ?>  >
                                
                                 <label class="form-check-label" for=<?php echo $selQuestRow['exam_ch1']; ?>>
                                     <?php echo $selQuestRow['exam_ch1']; ?>
@@ -60,7 +60,7 @@
                               </div>  
 
                               <div class="form-group pl-4">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch2']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch2']; ?> required >
+                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch2']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch2']; ?>  >
                                
                                 <label class="form-check-label" for=<?php echo $selQuestRow['exam_ch2']; ?>>
                                     <?php echo $selQuestRow['exam_ch2']; ?>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="col-md-8 float-left">
                              <div class="form-group pl-4">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch3']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch3']; ?> required >
+                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch3']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch3']; ?>  >
                                
                                 <label class="form-check-label" for=<?php echo $selQuestRow['exam_ch3']; ?>>
                                     <?php echo $selQuestRow['exam_ch3']; ?>
@@ -77,7 +77,7 @@
                               </div>  
 
                               <div class="form-group pl-4">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch4']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch4']; ?> required >
+                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch4']; ?>" class="form-check-input" type="radio" id=<?php echo $selQuestRow['exam_ch4']; ?>  >
                                
                                 <label class="form-check-label" for=<?php echo $selQuestRow['exam_ch4']; ?>>
                                     <?php echo $selQuestRow['exam_ch4']; ?>
@@ -90,12 +90,12 @@
 
                 <?php }
                 ?>
-                       <tr>
-                             <td style="padding: 20px;">
-                                 <button type="button" class="btn btn-xlg btn-warning p-3 pl-4 pr-4" id="resetExamFrm">Reset</button>
-                                 <input name="submit" type="submit" value="Submit" class="btn btn-xlg btn-primary p-3 pl-4 pr-4 float-right" id="submitAnswerFrmBtn">
-                             </td>
-                         </tr>
+                    <tr>
+                         <td style="padding: 20px;">
+                             <button type="button" class="btn btn-xlg btn-warning px-4 mt-4" style="font-size: 25px;" id="resetExamFrm">Reset</button>
+                             <input name="submitBtn" type="submit" value="Submit" class="btn btn-xlg btn-primary px-4 mt-4 float-right" style="font-size: 25px;" id="submitAnswerFrmBtn">
+                         </td>
+                    </tr>
 
                 <?php
             }
@@ -110,3 +110,55 @@
     </div>
 </div>
  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const timeLimitInput = document.getElementById("timeExamLimit");
+    const examIdInput = document.getElementById("exam_id");
+    const display = document.getElementById("countdown");
+
+    const timeLimitMinutes = parseInt(timeLimitInput?.value);
+    const examId = examIdInput?.value;
+
+    // Validate time limit
+    let timeLimit = (!isNaN(timeLimitMinutes) && timeLimitMinutes > 0) ? timeLimitMinutes : 10;
+
+    // Use a unique key for each exam
+    const storageKey = `exam_end_time_${examId}`;
+
+    let endTime = localStorage.getItem(storageKey);
+
+    // Set end time if not found
+    if (!endTime) {
+        const now = Date.now();
+        endTime = now + timeLimit * 60 * 1000;
+        localStorage.setItem(storageKey, endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+    // Countdown timer
+    const timer = setInterval(function () {
+        const now = Date.now();
+        const distance = endTime - now;
+
+        if (distance <= 0) {
+            clearInterval(timer);
+            display.value = "00:00";
+            alert("Time is up! Your exam is being submitted automatically.");
+            localStorage.removeItem(storageKey);
+            document.getElementById("submitAnswerFrmBtn").click();
+            return;
+        }
+
+        const minutes = Math.floor((distance / 1000 / 60));
+        const seconds = Math.floor((distance / 1000) % 60);
+        display.value = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }, 1000);
+});
+</script>
+
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
